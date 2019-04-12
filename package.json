@@ -1,0 +1,34 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "A dating app that matches people based on users' survey results. This full-stake site will then display the name and picture of the user with the bst overall match.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kinla/FriendFinder.git"
+  },
+  "keywords": [
+    "dating",
+    "sharon",
+    "chien",
+    "survey",
+    "full-stack",
+    "express",
+    "node.js",
+    "heroku"
+  ],
+  "author": "Sharon Chien",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kinla/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Kinla/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
+}
