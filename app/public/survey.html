@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>    
+-->
+    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+    <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script> 
+</head>
+<body>
+    <div class="container py-4">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h3><b>About You</b></h3>
+        <form>
+            <div class="form-group">
+                <label>Name (Required)</label>
+                <input type="text" class="form-control" id="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+                <label">Link to Photo Image (Required)</label>
+                <input type="text" class="form-control" id="photo" required>
+            </div>
+
+            <hr>
+            
+            <h4>Question 1</strong></h4>
+            <p class="question">My mind is always buzzing with unexplored ideas and plans.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q1">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 2</strong></h4>
+            <p class="question">I enjoy vibrant social events with lots of people.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q2">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 3</strong></h4>
+            <p class="question">I often spend time exploring unrealistic yet intriguing ideas.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q3">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 4</strong></h4>
+            <p class="question">Your travel plans are more likely to look like a rough list of ideas than a detailed itinerary.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q4">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>            
+            <h4>Question 5</strong></h4>
+            <p class="question">You often think about what you should have said in a conversation long after it has taken place.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q5">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 6</strong></h4>
+            <p class="question">If your friend is sad about something, your first instinct is to support them emotionally, not try to solve their problem.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q6">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 7</strong></h4>
+            <p class="question">People can rarely upset you.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q7">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 8</strong></h4>
+            <p class="question">You have a careful and methodical approach to life.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q8">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 9</strong></h4>
+            <p class="question">You like discussing different views and theories on what the world could look like in the future.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q9">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+            <h4>Question 10</strong></h4>
+            <p class="question">When you sleep, your dreams tend to be bizarre and fantastical.</p>
+            <select class="chosen-select" data-placeholder="Disagree or Agree?" id="q10">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <br><br>
+        </form>
+        <button type="submit" class="btn btn-primary btn-block" id="submit"><i class="fa fa-check-circle"></i> Submit</button>
+        <hr>
+        <a href="/api/friends">API Frend List</a>  |  <a href="https://github.com/Kinla/FriendFinder">GitHub Repo</a>
+        <!--Modal-->
+    </div>
+
+
+    <script src="survey.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+</body>
+</html>
+
