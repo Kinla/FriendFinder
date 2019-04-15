@@ -7,8 +7,9 @@
     <title>Friend Finder</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
     <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
+    <link rel="stylesheet" href="./style.css">  
+    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script> 
 </head>
 <body>
@@ -19,18 +20,18 @@
         <form>
             <div class="form-group">
                 <label>Name (Required)</label>
-                <input type="text" class="form-control" id="name" placeholder="Jane Smith" required>
+                <input type="text" class="form-control" id="name" required>
             </div>
             <div class="form-group">
                 <label">Link to Photo Image (Required)</label>
-                <input type="text" class="form-control" id="photo" required>
+                <input type="url" class="form-control" id="photo" required>
             </div>
 
             <hr>
             
             <h4>Question 1</strong></h4>
             <p class="question">My mind is always buzzing with unexplored ideas and plans.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q1">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q1" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -41,7 +42,7 @@
             <br><br>
             <h4>Question 2</strong></h4>
             <p class="question">I enjoy vibrant social events with lots of people.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q2">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q2" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -52,7 +53,7 @@
             <br><br>
             <h4>Question 3</strong></h4>
             <p class="question">I often spend time exploring unrealistic yet intriguing ideas.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q3">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q3" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -63,7 +64,7 @@
             <br><br>
             <h4>Question 4</strong></h4>
             <p class="question">Your travel plans are more likely to look like a rough list of ideas than a detailed itinerary.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q4">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q4" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -74,7 +75,7 @@
             <br><br>            
             <h4>Question 5</strong></h4>
             <p class="question">You often think about what you should have said in a conversation long after it has taken place.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q5">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q5" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -85,7 +86,7 @@
             <br><br>
             <h4>Question 6</strong></h4>
             <p class="question">If your friend is sad about something, your first instinct is to support them emotionally, not try to solve their problem.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q6">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q6" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -96,7 +97,7 @@
             <br><br>
             <h4>Question 7</strong></h4>
             <p class="question">People can rarely upset you.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q7">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q7" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -107,7 +108,7 @@
             <br><br>
             <h4>Question 8</strong></h4>
             <p class="question">You have a careful and methodical approach to life.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q8">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q8" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -118,7 +119,7 @@
             <br><br>
             <h4>Question 9</strong></h4>
             <p class="question">You like discussing different views and theories on what the world could look like in the future.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q9">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q9" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -129,7 +130,7 @@
             <br><br>
             <h4>Question 10</strong></h4>
             <p class="question">When you sleep, your dreams tend to be bizarre and fantastical.</p>
-            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q10">
+            <select class="chosen-select" data-placeholder="Agree/Disagree?" id="q10" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -138,8 +139,8 @@
               <option value="5">5 (Strongly Agree)</option>
             </select>
             <br><br>
+          <button type="submit" class="btn btn-primary btn-block" id="submit"><i class="fa fa-check-circle"></i> Submit</button>
         </form>
-        <button type="submit" class="btn btn-primary btn-block" id="submit"><i class="fa fa-check-circle"></i> Submit</button>
         <hr>
         <a href="/api/friends">API Frend List</a>  |  <a href="https://github.com/Kinla/FriendFinder">GitHub Repo</a>
         <!--Modal-->

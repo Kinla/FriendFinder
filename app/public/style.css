@@ -1,0 +1,13 @@
+select:invalid {
+    height: 0px !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    display: flex !important;
+    margin-top: 20px !important;
+    margin-left: 50px !important;
+}
+
+select:invalid[multiple] {
+    margin-top: 20px !important;
+    margin-left: 50px !important;
+}
