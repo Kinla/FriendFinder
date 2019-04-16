@@ -67,10 +67,18 @@ $("#submit").on("click", (event) => {
     }
 
     console.log(surveyResults)
+
+    // Package the data before POSTing
+    let userData = {
+        name: surveyResults.name,
+        photo: surveyResults.photo,
+        answers: surveyResults.answers,
+        sum: surveyResults.sum
+    }
     
     // Send post
     if (isValid) {
-        $.post("/api/friends", surveyResults, function(data){
+        $.post("/api/friends", userData, function(data){
 
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);
