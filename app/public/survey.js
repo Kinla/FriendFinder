@@ -1,3 +1,9 @@
+//Scroll to top on refresh/closing modal (closing modal needs to be added still)
+//dont know why but this is gittery???
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
+
 //init chosen
 $(".chosen-select").chosen({disable_search_threshold: 10})
 
@@ -22,34 +28,46 @@ $("#submit").on("click", (event) => {
         q7: $("#q7").val().trim(),
         q8: $("#q8").val().trim(),
         q9: $("#q9").val().trim(),
-        q10: $("#q10").val().trim()
+        q10: $("#q10").val().trim(),
     };
-        
-    // Calculate sum of results
-    surveyResults.sum =  parseInt(surveyResults.q1) +  parseInt(surveyResults.q2) +  parseInt(surveyResults.q3) +  parseInt(surveyResults.q4) +  parseInt(surveyResults.q5) +  parseInt(surveyResults.q6) +  parseInt(surveyResults.q7) +  parseInt(surveyResults.q8) +  parseInt(surveyResults.q9) +  parseInt(surveyResults.q10)
-
+    
     // Validation
     let isValid = true
-
+    
     // This checks all form value to not be ""
     let values = Object.values(surveyResults)
-
-    for (var i = 0; i < values.length; i++)
+    
+    for (let i = 0; i < values.length; i++){
         if(!values[i]){
             isValid = false
         }
-    
+    }
     // This checs if url leads to actual displayable image --- THIS DOESN'T WORK    
     const imgExists = (url) => {
         let img = new Image();
         img.onerror = () => {isValid = false}
         img.url = url
     }
-
+    
     imgExists(surveyResults.photo)
-
+    
     console.log(isValid)
+    
+    // Create two additional properties for surveyResults if isValid
+    if (isValid){
+        // Populate surveyResults.answers
+        surveyResults.answers = []
+        for (var i = 1; i < 11; i++){
+            surveyResults.answers.push(parseInt($("#q"+ i).val().trim()))
+        }
+    
+        // Calculate sum of results
+        surveyResults.sum = surveyResults.answers.reduce((a,b) => a + b, 0)
 
+    }
+
+    console.log(surveyResults)
+    
     // Send post
     if (isValid) {
         $.post("/api/friends", surveyResults, function(data){
