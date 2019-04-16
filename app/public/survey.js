@@ -7,40 +7,34 @@ $(".chosen-select").chosen({disable_search_threshold: 10})
 // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
 $("#submit").on("click", (event) => {
-    //event.preventDefault();
+    event.preventDefault();
 
     // Here we grab the form elements
     let surveyResults = {
         name: $("#name").val().trim(),
         photo: $("#photo").val().trim(),
-        q1: $("#q1").val().trim(),
-        q2: $("#q2").val().trim(),
-        q3: $("#q3").val().trim(),
-        q4: $("#q4").val().trim(),
-        q5: $("#q5").val().trim(),
-        q6: $("#q6").val().trim(),
-        q7: $("#q7").val().trim(),
-        q8: $("#q8").val().trim(),
-        q9: $("#q9").val().trim(),
-        q10: $("#q10").val().trim()
+        q1: parseInt($("#q1").val().trim()),
+        q2: parseInt($("#q2").val().trim()),
+        q3: parseInt($("#q3").val().trim()),
+        q4: parseInt($("#q4").val().trim()),
+        q5: parseInt($("#q5").val().trim()),
+        q6: parseInt($("#q6").val().trim()),
+        q7: parseInt($("#q7").val().trim()),
+        q8: parseInt($("#q8").val().trim()),
+        q9: parseInt($("#q9").val().trim()),
+        q10: parseInt($("#q10").val().trim())
     };
+        
+    // Calculate sum of results
+    surveyResults.sum = surveyResults.q1 + surveyResults.q2 + surveyResults.q3 + surveyResults.q4 + surveyResults.q5 + surveyResults.q6 + surveyResults.q7 + surveyResults.q8 + surveyResults.q9 + surveyResults.q10
 
     console.log(surveyResults);
-
-    //check if photo is a photo url
-    const checkURL = (url) => {
-        return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
-    }
-
-    let isPhoto = checkURL(surveyResults.photo)
-
-    //check entire 
 
     // This line is the magic. It"s very similar to the standard ajax function we used.
     // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
     // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
     // depending on if a tables is available or not.
-    $.post("/api/tables", surveyResults, (data) => {
+    $.post("/api/tables", surveyResults, function(data){
         console.log(data)    
 
         // Clear the form when submitting
@@ -57,5 +51,6 @@ $("#submit").on("click", (event) => {
         $("#q9").val(""),
         $("#q10").val("")
     });
+
 
 });

@@ -7,32 +7,42 @@ const api = (app) => {
         res.json(friends)
     });
 
-    app.post("/api/tables", function(req, res) {
-        // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-        // It will do this by sending out the value "true" have a table
-        // req.body is available since we're using the body parsing middleware
-        if (tableData.length < 5) {
-          tableData.push(req.body);
-          res.json(true);
+    app.post("/api/friends", function(req, res) {
+        //get friends array's sums as a rray
+        let friendsSum = friends.map(el => el.sum)
+        console.log(friendsSum)
+
+        // define user sum
+        let reqSum = req.body.sum
+        console.log(reqSum)
+
+        // calculate diff between user and all friends
+        const calcDiff = (val, array) => {
+            return array.map(el => Math.abs(val - el))
         }
-        else {
-          waitListData.push(req.body);
-          res.json(false);
-        }
+        
+        let diff = calcDiff(reqSum, friendsSum)
+        console.log(diff)
+
+        // find the smallest value of the calculated diff
+        let minDiff = Math.min(diff)
+        console.log(minDiff)
+
+        // find the array key that matches this smallest diff within the diff array
+        let keyID = diff.indexOF(minDiff)
+        console.log(keyID)
+
+        // return the friend JSONthat also is in this key position
+        res.json(friends[keyID])
+        console.log(friends[keyID])
+
+        // push current user info onto friends array
+        friends.push(req.body)
+        console.log(friends)
     });
     
 
 
-
-/*
-    const bestFriend = (me) => {
-        let score = me.score;
-        let allScores = [friends].maps(el => el.scores);
-        let sumScores = allScores.map(el = )
-        
-        
-    }
-*/
 }
 
     /*
