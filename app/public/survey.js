@@ -63,18 +63,18 @@ $("#submit").on("click", (event) => {
     
         // Calculate sum of results
         surveyResults.sum = surveyResults.answers.reduce((a,b) => a + b, 0)
-
+        
+        // Package the data before POSTing
+        let userData = {
+            name: surveyResults.name,
+            photo: surveyResults.photo,
+            answers: surveyResults.answers,
+            sum: surveyResults.sum
+        }
     }
 
     console.log(surveyResults)
 
-    // Package the data before POSTing
-    let userData = {
-        name: surveyResults.name,
-        photo: surveyResults.photo,
-        answers: surveyResults.answers,
-        sum: surveyResults.sum
-    }
     
     // Send post
     if (isValid) {
