@@ -13,7 +13,7 @@ const api = (app) => {
         console.log(friendsSum)
 
         // define user sum
-        let reqSum = req.body.sum
+        let reqSum = parseInt(req.body.sum)
         console.log(reqSum)
 
         // calculate diff between user and all friends
@@ -29,7 +29,7 @@ const api = (app) => {
         console.log(minDiff)
 
         // find the array key that matches this smallest diff within the diff array
-        let keyID = diff.indexOF(minDiff)
+        let keyID = diff.indexOf(minDiff)
         console.log(keyID)
 
         // return the friend JSONthat also is in this key position
@@ -37,6 +37,7 @@ const api = (app) => {
         console.log(friends[keyID])
 
         // push current user info onto friends array
+        req.body.sum = parseInt(req.body.sum)
         friends.push(req.body)
         console.log(friends)
     });

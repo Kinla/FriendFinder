@@ -28,29 +28,58 @@ $("#submit").on("click", (event) => {
     // Calculate sum of results
     surveyResults.sum = surveyResults.q1 + surveyResults.q2 + surveyResults.q3 + surveyResults.q4 + surveyResults.q5 + surveyResults.q6 + surveyResults.q7 + surveyResults.q8 + surveyResults.q9 + surveyResults.q10
 
-    console.log(surveyResults);
+    // Validation
+    let isValid = true
 
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-    $.post("/api/tables", surveyResults, function(data){
-        console.log(data)    
+    if (!surveyResults.name) {
+        isValid = false
+    }
+    
+    const imgExists = (url) => {
+        let img = new Image();
+        img.url = url
+        img.onerror = () => {isValid = false}
+    }
 
-        // Clear the form when submitting
-        $("#name").val(""),
-        $("#photo").val(""),
-        $("#q1").val(""),
-        $("#q2").val(""),
-        $("#q3").val(""),
-        $("#q4").val(""),
-        $("#q5").val(""),
-        $("#q6").val(""),
-        $("#q7").val(""),
-        $("#q8").val(""),
-        $("#q9").val(""),
-        $("#q10").val("")
-    });
+    imgExists(surveyResults.photo)
+
+    for (var i = 1; i < 11; i++){
+        console.log(surveyResults["q" + i])
+        if((surveyResults["q" + i]) === NaN){
+            isValid = false
+        }
+    }
+
+    console.log(isValid)
+
+    // Send post
+    if (isValid) {
+        $.post("/api/friends", surveyResults, function(data){
+
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.photo);
+
+            // Show the modal with the best match
+            $("#results-modal").modal("toggle");
+    
+            // Clear the form when submitting
+            $("#name").val(""),
+            $("#photo").val(""),
+            $("#q1").val(""),
+            $("#q2").val(""),
+            $("#q3").val(""),
+            $("#q4").val(""),
+            $("#q5").val(""),
+            $("#q6").val(""),
+            $("#q7").val(""),
+            $("#q8").val(""),
+            $("#q9").val(""),
+            $("#q10").val("")
+        });
+
+    } else {
+        alert("Please complete every filed of the form.")
+    }
 
 
 });
