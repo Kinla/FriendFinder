@@ -15,21 +15,20 @@ let friends = [
     answers: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
   },
   {
-    name: "test1",
-    photo: "https://vignette.wikia.nocookie.net/starwars/images/f/f8/ReyTLJEntertainmentWeeklyNovember.png",
+    name: "Captain Cold",
+    photo: "https://cdn-images-1.medium.com/max/1200/1*NlAmMb1hFVM2OfJTmOFMLw.jpeg",
     answers: [2, 2, 4, 2, 4, 4, 4, 3, 2, 1],
   },
   {
-    name: "test2",
-    photo: "https://pbs.twimg.com/profile_images/895185572238692352/2S6hFO8E.jpg",
+    name: "Trump",
+    photo: "https://image.cnbcfm.com/api/v1/image/105778579-1551902059431rtx6py6d.jpg",
     answers: [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   },
   {
-    name: "test3",
-    photo: "https://cdn.britannica.com/s:300x300/47/201647-004-1F1A6787.jpg",
+    name: "Easter Bunny",
+    photo: "https://images2.minutemediacdn.com/image/upload/c_crop,h_1192,w_2121,x_0,y_111/f_auto,w_1100/v1554929883/shape/mentalfloss/94180-istock-160593094.jpg",
     answers: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  },
-  
+  }
 ]
 
 module.exports = friends
