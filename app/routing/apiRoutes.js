@@ -9,27 +9,30 @@ const api = (app) => {
 
     app.post("/api/friends", function(req, res) {
         //get friends array's sums as a rray
-        let friendsSum = friends.map(el => el.sum)
-        console.log(friendsSum)
+        let friendsAns = friends.map(el => el.answers)
+        console.log(friendsAns)
 
         // define user sum
-        let userSum = parseInt(req.body.sum)
-        console.log(userSum)
+        let userAns = req.body.answers
+        console.log(userAns)
 
         // calculate diff between user and all friends
-        const calcDiff = (val, array) => {
-            return array.map(el => Math.abs(val - el))
+        let diffs = []
+        for (var i = 0; i < friendsAns.length; i++){
+            let diff = 0
+            for(var j = 0; j < userAns.length; j++){
+                diff += Math.abs(parseInt(friendsAns[i][j]) - parseInt(userAns[j]))
+            }
+            diffs.push(diff)
         }
+        console.log(diffs)
         
-        let diff = calcDiff(userSum, friendsSum)
-        console.log(diff)
-
         // find the smallest value of the calculated diff
-        let minDiff = Math.min(diff)
+        let minDiff = Math.min(...diffs)
         console.log(minDiff)
 
         // find the array key that matches this smallest diff within the diff array
-        let keyID = diff.indexOf(minDiff)
+        let keyID = diffs.indexOf(minDiff)
         console.log(keyID)
 
         // return the friend JSONthat also is in this key position

@@ -1,9 +1,3 @@
-//Scroll to top on refresh/closing modal (closing modal needs to be added still)
-//dont know why but this is gittery???
-$(document).ready(function(){
-    $(this).scrollTop(0);
-});
-
 //init chosen
 $(".chosen-select").chosen({disable_search_threshold: 10})
 
@@ -53,35 +47,33 @@ $("#submit").on("click", (event) => {
     
     console.log(isValid)
     
+    let userData
     // Create two additional properties for surveyResults if isValid
     if (isValid){
         // Populate surveyResults.answers
         surveyResults.answers = []
         for (var i = 1; i < 11; i++){
-            surveyResults.answers.push(parseInt($("#q"+ i).val().trim()))
+            surveyResults.answers.push($("#q"+ i).val().trim())
         }
     
-        // Calculate sum of results
-        surveyResults.sum = surveyResults.answers.reduce((a,b) => a + b, 0)
-        
         // Package the data before POSTing
-        let userData = {
+        userData = {
             name: surveyResults.name,
             photo: surveyResults.photo,
-            answers: surveyResults.answers,
-            sum: surveyResults.sum
+            answers: surveyResults.answers
         }
     }
 
-    console.log(surveyResults)
+    console.log(userData)
 
     
     // Send post
     if (isValid) {
         $.post("/api/friends", userData, function(data){
 
+            $(".modal-title").text("Best Match");
             $("#match-name").text(data.name);
-            $("#match-img").attr("src", data.photo);
+            $("#match-img").attr("src", data.photo).show();
 
             // Show the modal with the best match
             $("#results-modal").modal("toggle");
@@ -89,21 +81,35 @@ $("#submit").on("click", (event) => {
             // Clear the form when submitting
             $("#name").val(""),
             $("#photo").val(""),
-            $("#q1").val(""),
-            $("#q2").val(""),
-            $("#q3").val(""),
-            $("#q4").val(""),
-            $("#q5").val(""),
-            $("#q6").val(""),
-            $("#q7").val(""),
-            $("#q8").val(""),
-            $("#q9").val(""),
-            $("#q10").val("")
+            $("#q1").val("").trigger("chosen:updated"),
+            $("#q2").val("").trigger("chosen:updated"),
+            $("#q3").val("").trigger("chosen:updated"),
+            $("#q4").val("").trigger("chosen:updated"),
+            $("#q5").val("").trigger("chosen:updated"),
+            $("#q6").val("").trigger("chosen:updated"),
+            $("#q7").val("").trigger("chosen:updated"),
+            $("#q8").val("").trigger("chosen:updated"),
+            $("#q9").val("").trigger("chosen:updated"),
+            $("#q10").val("").trigger("chosen:updated")
+
         });
 
     } else {
-        alert("Please complete every filed of the form.")//should write a modal for this
+        $(".modal-title").text("Error!");
+        $("#match-name").text("Please complete all fields and try again.");
+        $("#match-img").hide();
+
+
+        $("#results-modal").modal("toggle");
+
+
+        //alert("Please complete every filed of the form.")
     }
 
 
 });
+
+$(".scroll").on("click", () => {
+    $('html,body').animate({ scrollTop: 0 }, 1000);
+})
+
