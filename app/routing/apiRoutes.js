@@ -1,5 +1,3 @@
-//* A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-//* A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 const friends = require("../data/friends.js")
 
 const api = (app) => {
@@ -31,22 +29,29 @@ const api = (app) => {
         let minDiff = Math.min(...diffs)
         console.log(minDiff)
 
-        // find the array key that matches this smallest diff within the diff array
-        let keyID = diffs.indexOf(minDiff)
-        console.log(keyID)
+        // find all array key(s) that matches this smallest diff within the diff array
+        let matches = []
+        for (var i = 0; i < diffs.length; i++){
+            if (diffs[i] === minDiff){
+                matches.push(i)
+            }
+        }
+        console.log(matches)
 
-        // return the friend JSONthat also is in this key position
+        // Chose match by random
+        // (useful if more than one match... else only the first one would always get a friend)
+        let random = Math.floor(Math.random()*matches.length)
+        let keyID = matches[random]
+        console.log(random, keyID)
+
+        // return the friend that is in this key position
         res.json(friends[keyID])
         console.log(friends[keyID])
 
         // push current user info onto friends array
-        req.body.sum = parseInt(req.body.sum)
         friends.push(req.body)
         console.log(friends)
     });
-    
-
-
 }
 
 module.exports = api

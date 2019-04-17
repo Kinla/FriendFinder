@@ -91,7 +91,6 @@ $("#submit").on("click", (event) => {
             $("#q8").val("").trigger("chosen:updated"),
             $("#q9").val("").trigger("chosen:updated"),
             $("#q10").val("").trigger("chosen:updated")
-
         });
 
     } else {
@@ -99,14 +98,8 @@ $("#submit").on("click", (event) => {
         $("#match-name").text("Please complete all fields and try again.");
         $("#match-img").hide();
 
-
         $("#results-modal").modal("toggle");
-
-
-        //alert("Please complete every filed of the form.")
     }
-
-
 });
 
 $(".scroll").on("click", () => {
