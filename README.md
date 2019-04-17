@@ -17,13 +17,13 @@ This application uses Express to handle routing. And is deployed on Heroku.
 
 ## Match Magic
 This application compares the difference between the current user's suvery score against those from previous users, question by question. Then add up the difference to calculate the **Total Difference**. This is then used as the **compatibility score**. Lower score signals superior compatibility.
-
+```
 Example:
-  * Current user: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`
-  * User 1: `[3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
-  * Differences: `[2, 1, 2, 0, 0, 0, 0, 0, 0, 0]`
-  * Total Difference: **2 + 1 + 2=** **_5_**   
-
+  * Current user: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
+  * User 1: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
+  * Differences: [2, 1, 2, 0, 0, 0, 0, 0, 0, 0]
+  * Total Difference: **2 + 1 + 2=** **_5_** 
+```  
 **Accounting for Multiples**
 >There is always a possiblity where the current user is equally compatible with two or more previoius users. This application deals with that possiblity by serving back one of the matches at random.
 
