@@ -1,12 +1,12 @@
 # Friend Finder - Node and Express Servers
 
-### Overview
+## Overview
 
 This is a compatibility-based "Friend Finder" application. It will take in the results of a short 10 question survey from the user, then compare the answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
 This application uses Express to handle routing. And is deployed on Heroku.
 
-### Technologies
+## Technologies
   * HTML5
   * CSS + Bootstrap
   * Javascript
@@ -15,7 +15,7 @@ This application uses Express to handle routing. And is deployed on Heroku.
   * npm - Express
   * Heroku
 
-### Match Magic
+## Match Magic
 This application compares the difference between the current user's suvery score against those from previous users, question by question. Then add up the difference to calculate the **Total Difference**. This is then used as the **compatibility score**. Lower score signals superior compatibility.
 
 Example:
@@ -27,6 +27,6 @@ Example:
 **Accounting for Multiples**
 >There is always a possiblity where the current user is equally compatible with two or more previoius users. This application deals with that possiblity by serving back one of the matches at random.
 
-### Improvements
+## Improvements
   * Add validation for photo URL - either RegEx or see if URL is actually active as image src
   * Improve look
