@@ -28,5 +28,6 @@ Example:
 >There is always a possiblity where the current user is equally compatible with two or more previoius users. This application deals with that possiblity by serving back one of the matches at random.
 
 ## Improvements
-  * Add validation for photo URL - either RegEx or see if URL is actually active as image src
+  * Try using the if URL is actually an image URL via launching <img> tag validation method
+  * Try using HTML5 required - needs to somehow work around .preventDefault() when submitting forms
   * Improve look
