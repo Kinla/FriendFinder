@@ -36,15 +36,23 @@ $("#submit").on("click", (event) => {
             isValid = false
         }
     }
+
     // This checs if url leads to actual displayable image --- THIS DOESN'T WORK    
     const imgExists = (url) => {
         let img = new Image();
         img.onerror = () => {isValid = false}
         img.url = url
-    }
-    
+    }    
     imgExists(surveyResults.photo)
-    
+
+    //This validation works for photo URL
+    const checkURL = (url) => {
+        if (url.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/) === null){
+            isValid = false
+        }
+    }    
+    checkURL(surveyResults.photo)
+
     console.log(isValid)
     
     let userData
