@@ -22,7 +22,7 @@ Example:
   * Current user: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
   * User 1: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
   * Differences: [2, 1, 2, 0, 0, 0, 0, 0, 0, 0]
-  * Total Difference: **2 + 1 + 2=** **_5_** 
+  * Total Difference: 2 + 1 + 2 = 5 //Compatibility score
 ```  
 **Accounting for Multiples**
 >There is always a possiblity where the current user is equally compatible with two or more previoius users. This application deals with that possiblity by serving back one of the matches at random.
