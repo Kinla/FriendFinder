@@ -6,7 +6,7 @@ This is a compatibility-based "Friend Finder" application. It will take in the r
 
 This application uses Express to handle routing. And is deployed on Heroku.
 
-## Technologies
+### Technologies
   * HTML5
   * CSS + Bootstrap
   * Javascript
