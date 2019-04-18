@@ -9,7 +9,7 @@ This application uses Express to handle routing. And is deployed on Heroku.
 ### Technologies
   * HTML5
   * CSS + Bootstrap
-  * Javascript
+  * Javascript + jQuery
   * Node.js
   * npm - Chosen
   * npm - Express
