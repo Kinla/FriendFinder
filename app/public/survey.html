@@ -12,17 +12,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
 </head>
-<body>
-    <div class="container py-4">
+<body class="surveyBody">
+    <div class="container">
+      <div class="customShadow my-5 p-5">
         <h3><b>About You</b></h3>
         <form>
             <div class="form-group row">
                 <h6 class="col-3"><label class="col-form-label">Name</label></h6>
-                <input type="text" class="form-control col-9" id="name" placeholder="(Required)" required >
+                <input type="text" class="form-control col-8" id="name" placeholder="(Required)" required >
             </div>
             <div class="form-group row">
                 <h6 class="col-3"><label class="col-form-label">Link to Photo Image</label></h6>
-                <input type="url" class="form-control col-9" id="photo" placeholder="(Required)" required pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)"> 
+                <input type="url" class="form-control col-8" id="photo" placeholder="(Required)" required pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)"> 
             </div>
 
             <hr><br>
@@ -130,9 +131,11 @@
             <br><br>
           <button type="submit" class="btn btn-primary btn-block" id="submit"><i class="fa fa-check-circle"></i> Submit</button>
         </form>
-        <hr>
-        <a href="/api/friends">API Frend List</a>  |  <a href="https://github.com/Kinla/FriendFinder">GitHub Repo</a>
-        <!--Modal-->
+      </div>
+      <footer class="footer text-right">
+          <a href="/api/friends">API Friends List</a>  |  <a href="https://github.com/Kinla/FriendFinder">GitHub Repo</a>
+      </footer>
+      <!--Modal-->
         <div id="results-modal" class="modal fade" role="dialog">
           <div class="modal-dialog">
       
