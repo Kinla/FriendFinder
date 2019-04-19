@@ -11,7 +11,7 @@ $(".chosen-select").chosen({
 // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
 // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
-$("#submit").on("click", (event) => {
+$("#form").on("submit", (event) => {
     event.preventDefault();
 
     // Validation
