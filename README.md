@@ -29,5 +29,3 @@ Example:
 
 ## Improvements
   * Try using the if URL is actually an image URL via launching <img> tag validation method
-  * Try using HTML5 required - needs to somehow work around .preventDefault() when submitting forms
-  * Improve look
