@@ -33,14 +33,9 @@ $("#form").on("submit", (event) => {
     imgExists(surveyResults.photo)
     */
 
-   //This validating photo url to be actual url with image file type
-   let url = $("#photo").val().trim()
-    const checkURL = (url) => {
-        if (url.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/) === null){
-            isValid = false
-        }
-    }    
-    checkURL(url)
+    //This validating photo url to be actual url with image file type
+    let url = $("#photo").val().trim()
+    isValid = checkURL(url)
 
     console.log(isValid)
     
@@ -110,6 +105,19 @@ $("#form").on("submit", (event) => {
         $("#results-modal").modal("toggle");
     }
 });
+
+
+
+// Check URL for image
+const checkURL = (url) => {
+    if (url.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/) === null){
+        return false
+    } else {
+        return true
+    }
+}    
+
+
 
 // Allow for slowish scroll to top when closing modals
 $(".scroll").on("click", () => {
