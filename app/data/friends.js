@@ -1,7 +1,7 @@
 let friends = [
   {
     name: "Rey",
-    photo: "https://vignette.wikia.nocookie.net/starwars/images/f/f8/ReyTLJEntertainmentWeeklyNovember.png",
+    photo: "https://d1s83tmo8l7caa.cloudfront.net/app/uploads/2016/04/20151152/star-wars-1024x640.jpg",
     answers: [2, 2, 4, 2, 4, 4, 4, 3, 2, 1],
   },
   {
